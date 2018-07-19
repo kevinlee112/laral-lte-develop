@@ -8,6 +8,8 @@
 
 namespace App\Http\Controllers\Api;
 
+use GuzzleHttp\Client;
+
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Transformers\UserTransformer;
@@ -20,9 +22,9 @@ class UserController extends BaseController
     {
 
         $user = User::get();
-        abort(401, '用户名或密码错误');
+       // abort(401, '用户名或密码错误');
         //return $this->response->collection($user,new UserTransformer());
-        //return $this->response->error('修改失败','412');
+        return $this->response->error('错误测试','412');
     }
 
 }
