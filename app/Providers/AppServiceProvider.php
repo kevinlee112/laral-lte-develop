@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -14,6 +15,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+        \API::error(function (ModelNotFoundException $exception) {
+            abort(404);
+        });
     }
 
     /**

@@ -3,8 +3,12 @@
     <h1>
         @foreach($comData['top'] as $v)
             @if(in_array($v['id'],$comData['openarr']))
-                {{$v['label']}}
-                <small>{{$v['description']}}</small>
+                @foreach($comData[$v['id']] as $vv)
+                    @if(in_array($vv['id'],$comData['openarr']))
+                        {{$vv['label']}}
+                        <small>{{$vv['description']}}</small>
+                    @endif
+                @endforeach
             @endif
         @endforeach
 

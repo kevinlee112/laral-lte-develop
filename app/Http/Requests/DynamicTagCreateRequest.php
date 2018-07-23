@@ -25,7 +25,7 @@ class DynamicTagCreateRequest extends Request
     {
         return [
             'name'=>'required|max:255',
-            'sort'=>'required|int|max:2'
+            'sort'=>'required|int|max:12'
         ];
     }
 }
