@@ -59,7 +59,6 @@ class Kernel extends HttpKernel
      */
     protected $routeMiddleware = [
         'auth' => \App\Http\Middleware\Authenticate::class,
-       // 'auth' => \Illuminate\Auth\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
@@ -67,6 +66,7 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
 
         'authAdmin' => \App\Http\Middleware\AuthenticateAdmin::class,
+        'authApi' => \App\Http\Middleware\AuthenticateApi::class,
         'menu'=>\App\Http\Middleware\GetMenu::class,
         'breadcrumbs'=>\App\Http\Middleware\RegisterBreadcrumbs::class,
     ];

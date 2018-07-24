@@ -13,7 +13,7 @@ use App\Models\Admin\DynamicTag;
 use App\Http\Requests\Admin\DynamicTagUpdateRequest;
 use App\Http\Requests\Admin\DynamicTagCreateRequest;
 
-class DynamicTagController
+class DynamicTagController extends BaseController
 {
     protected $fields = [
         'name'        => '',

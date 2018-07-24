@@ -7,11 +7,10 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests\Admin\RoleCreateRequest;
 use App\Http\Requests\Admin\RoleUpdateRequest;
-use App\Http\Controllers\Controller;
 use App\Models\Admin\Role;
 
 
-class RoleController extends Controller
+class RoleController extends BaseController
 {
     protected $fields = [
         'name' => '',

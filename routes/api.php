@@ -13,12 +13,8 @@ use Illuminate\Http\Request;
 |
 */
 
-$api = app('Dingo\Api\Routing\Router');
-
-$api->version('v1', [
-    'namespace' => 'App\Http\Controllers\Api',
-], function ($api) {
-
-    $api->post('index','UserController@index');
-
+Route::group(['prefix'=> 'v1', 'namespace' => 'Api\v1', 'middleware' => 'authApi'], function () {
+    Route::post('user', 'UserController@index');
+    Route::post('courses', 'CoursesController@index');
 });
+

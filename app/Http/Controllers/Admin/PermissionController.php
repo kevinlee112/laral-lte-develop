@@ -7,11 +7,10 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests\Admin\PermissionCreateRequest;
 use App\Http\Requests\Admin\PermissionUpdateRequest;
-use App\Http\Controllers\Controller;
 use App\Models\Admin\Permission;
 use Event;
 
-class PermissionController extends Controller
+class PermissionController extends BaseController
 {
     protected $fields = [
         'name'        => '',
