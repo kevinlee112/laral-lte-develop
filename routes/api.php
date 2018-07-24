@@ -19,6 +19,6 @@ $api->version('v1', [
     'namespace' => 'App\Http\Controllers\Api',
 ], function ($api) {
 
-    $api->get('index','UserController@index');
+    $api->post('index','UserController@index');
 
 });

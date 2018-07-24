@@ -9,19 +9,21 @@
 namespace App\Http\Controllers\Api;
 
 use App\Models\User;
-use Dingo\Api\Http\Response;
+use Validator;
 use Illuminate\Http\Request;
 use App\Http\Transformers\UserTransformer;
-use Illuminate\Support\Facades\Cache;
 
 
 class UserController extends BaseController
 {
 
-    public function index()
+    public function index(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'email' => 'required|email',
+        ]);
 
-       // Cache::put('test_cache', 'user_index', '200');
         $user = User::get();
 //      // abort(401, '用户名或密码错误');
         return $this->response->collection($user,new UserTransformer());

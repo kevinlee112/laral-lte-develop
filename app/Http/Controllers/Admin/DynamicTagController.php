@@ -10,8 +10,8 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Models\Admin\DynamicTag;
-use App\Http\Requests\DynamicTagUpdateRequest;
-use App\Http\Requests\DynamicTagCreateRequest;
+use App\Http\Requests\Admin\DynamicTagUpdateRequest;
+use App\Http\Requests\Admin\DynamicTagCreateRequest;
 
 class DynamicTagController
 {

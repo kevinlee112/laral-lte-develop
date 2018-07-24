@@ -5,8 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Events\permChangeEvent;
 use Illuminate\Http\Request;
 
-use App\Http\Requests\PermissionCreateRequest;
-use App\Http\Requests\PermissionUpdateRequest;
+use App\Http\Requests\Admin\PermissionCreateRequest;
+use App\Http\Requests\Admin\PermissionUpdateRequest;
 use App\Http\Controllers\Controller;
 use App\Models\Admin\Permission;
 use Event;
