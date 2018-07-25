@@ -25,6 +25,7 @@ class AuthenticateApi
             return Response()->json(['statusCode'=> 4, 'msg'=>'登陆异常', 'params'=>$request->all()]);
         }
         $loginData = json_decode(Redis::get('online_course_'.$ticket), 1);
+        var_dump($loginData);exit;
 
         if (empty($loginData))
         {
