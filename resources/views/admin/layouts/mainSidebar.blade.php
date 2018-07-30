@@ -3,19 +3,25 @@
 <section class="sidebar">
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu" data-widget="tree">
-        <li class="header">功能模块</li>
-        <li class="active treeview">
-            <a href="#">
-                <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-                <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-            </a>
-            <ul class="treeview-menu">
-                <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-                <li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
-            </ul>
-        </li>
+        <li class="header">栏目导航</li>
+        <!-- Optionally, you can add icons to the links -->
+
+        <li><a href="/admin"><i class="fa fa-dashboard"></i> <span>控制面板</span></a></li>
+        <?php $comData=Request::get('comData_menu'); ?>
+        @foreach($comData['top'] as $v)
+            <li class="treeview  @if(in_array($v['id'],$comData['openarr'])) active @endif">
+                <a href="#"><i class="fa {{ $v['icon'] }}"></i> <span>{{$v['label']}}</span> <i
+                            class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
+                    @foreach($comData[$v['id']] as $vv)
+                        <li @if(in_array($vv['id'],$comData['openarr'])) class="active" @endif>
+                            <a href="{{URL::route($vv['name'])}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-circle-o"></i>{{$vv['label']}}
+                            </a>
+                        </li>
+                    @endforeach
+                </ul>
+            </li>
+        @endforeach
     </ul>
 </section>
 <!-- /.sidebar -->
